@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style = "background-color: mediumpurple">
+    <H1 >Hello world!!</H1>
+
+    <form action = "/index" method="post">
+        <H3>CONTENT</H3>
+        <input name="content_name[]" type="text" />
+        <input name="content_name[]" type="text" />
+        <input name="content_name[]" type="text" />
+        <input name="content_name[]" type="text" />
+        <input name="content_name[]" type="text" />
+        <br>
+        <H3>RATING</H3>
+        <input name="rating[]" type="number" step="1"/>
+        <input name="rating[]" type="number" step="1"/>
+        <input name="rating[]" type="number" step="1"/>
+        <input name="rating[]" type="number" step="1"/>
+        <input name="rating[]" type="number" step="1"/>
+        <br>
+        <input type="submit" value="Submit"/>
+    </form>
+        <marquee behavior="scroll" direction="right" scrollamount="50">---></marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="25"><---</marquee>
+    <div style="height:500px;overflow:auto;">
+        {% for table in tables %}
+                    {{titles[loop.index]}}
+                    {{ table|safe }}
+        {% endfor %}
+    </div>
+
+
+</body>
+<style type="text/css">
+H1 {
+
+  color: red;
+  animation-name: example;
+  animation-duration: 30s;
+}
+@keyframes example {
+  0%   {color: red;}
+  25%  {color: yellow;}
+  50%  {color: blue;}
+  100% {color: green;}
+}
+</style>
+</html>
